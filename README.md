@@ -1,10 +1,7 @@
 # M7S1 - Belajar Flask Dasar
 
 ## 1.1 Clone Repository Ini (Jika sebelumnya belum Clone)
-**Pastikan sudah berada di working directory `aim-technical`**
- ```
- git clone https://github.com/rasyidev/aim-technical.git
- ```
+**Pastikan sudah berada di working directory `main`**
  
  *atau*
  
