@@ -12,7 +12,11 @@ def main():
 
 @app.route('/masterpeta', methods=['GET','POST']) 
 def masterpeta():
-    return render_template('masterpeta.html',menu='master', submenu='peta')
+    if request.method == 'GET':
+        print(request.form)
+        return render_template('masterpeta.html')
+    if request.method == 'POST':
+        return render_template('masterpeta.html',menu='master', submenu='peta')
 
 
 @app.route('/masterprediksi', methods=['GET','POST']) 
