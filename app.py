@@ -26,19 +26,24 @@ def masterprediksi():
         return render_template('masterprediksi.html')
     elif request.method == 'POST':
          # Get values through input bars
-        model, std_scaler  = joblib.load("model_development/model_predict_home_price.pkl")
+        model  = joblib.load("model_development/model_predict_home_price.pkl")
         income = request.form.get("income")
         age = request.form.get("age")
+        if float(age) < 2.6:
+            age = str(2.6)
         bathroom = request.form.get("bathroom")
+        if int(bathroom) < 3:
+            bathroom =  str(3)
         bedroom = request.form.get("bedroom")
+        if int(bedroom) < 2:
+            bedroom = str(2)
         population = request.form.get("population")
         
         # Put inputs to dataframe
         X = pd.DataFrame([[income, age, bathroom, bedroom, population]], columns = ["income", "age", "bathroom", "bedroom", "population"])
-        X_scaled = std_scaler.fit_transform(X)
-        
+     
         # Get prediction
-        predict_price = round(model.predict(X_scaled)[0],2)      
+        predict_price = round(model.predict(X)[0],2)      
     else:
         predict_price = ""    
     return render_template("masterprediksi.html", output = predict_price)
@@ -54,7 +59,11 @@ def masterprediksiusia():
         model2 = joblib.load("model_development/model_predict_home_age.pkl")
         income = request.form.get("income")
         bathroom = request.form.get("bathroom")
+        if int(bathroom) < 3:
+            bathroom =  str(3)
         bedroom = request.form.get("bedroom")
+        if int(bedroom) < 2:
+            bedroom = str(2)
         population = request.form.get("population")
         price = request.form.get("price")
         
