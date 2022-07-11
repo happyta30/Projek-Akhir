@@ -1,3 +1,10 @@
+# Nama Kelompok : 
+1. Ade Irvan Kurniawan
+2. Happyta Nilam Sari
+3. Dikri Nur Abdillah
+4. Trisari Gandania Zalukhu
+5. Kharir Makhfudz
+
 # M7S1 - Belajar Flask Dasar
 
 ## 1.1 Clone Repository Ini (Jika sebelumnya belum Clone)
